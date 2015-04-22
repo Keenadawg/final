@@ -2,8 +2,8 @@
 
 <h1>Listing Userholidays</h1>
 
-<div class="media"></div>
-<div class="media-body"></div>
+<div class="media">
+  <div class="media-body">
 
       <table class="table table-hover">
         <thead>
@@ -21,19 +21,19 @@
           <% @userholidays.each do |userholiday| %>
             <tr>
               <td><%= userholiday.username %></td>
-              <td><%= userholiday.start %></td>
-              <td><%= userholiday.end %></td>
+              <td><%= userholiday.start.strftime("%m/%d/%Y") %></td>
+              <td><%= userholiday.end.strftime("%m/%d/%Y") %></td>
               <td><%= userholiday.managersName %></td>
               <td><%= userholiday.duration %></td>
-              <td><%= link_to 'Show', userholiday %></td>
-              <td><%= link_to 'Edit', edit_userholiday_path(userholiday) %></td>
-              <td><%= link_to 'Destroy', userholiday, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', userholiday, class: 'btn btn-mini' %></td>
+              <td><%= link_to 'Edit', edit_userholiday_path(userholiday), class: 'btn btn-mini btn-success' %></td>
+              <td><%= link_to 'Destroy', userholiday, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-   </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
