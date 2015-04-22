@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <p>HR Holiday System</p>
+  
+<%= link_to "home", root_path %>
+<%= link_to "Contact", welcome_contact_path %>
+<%= link_to "Features", welcome_features_path %>
+<%= link_to "Login", welcome_login_path %>
+<%= link_to "userholidays", userholidays_path %>
+
+<%= yield %>
+
+</body>
+</html>

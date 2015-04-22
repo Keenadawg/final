@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: 
+  start: 
+  end: 
+  managersName: 
+  duration: 9.99
+
+two:
+  username: 
+  start: 
+  end: 
+  managersName: 
+  duration: 9.99
