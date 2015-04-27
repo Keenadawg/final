@@ -4,7 +4,7 @@ class UserholidaysController < ApplicationController
   # GET /userholidays
   # GET /userholidays.json
   def index
-    @userholidays = Userholiday.all
+ @userholidays = Userholiday.all
   end
 
   # GET /userholidays/1
@@ -69,6 +69,6 @@ class UserholidaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def userholiday_params
-      params.require(:userholiday).permit(:username, :start, :end, :managersName, :duration)
+      params.require(:userholiday).permit(:username, :start, :end, :managersName, :duration, :status_type)
     end
 end

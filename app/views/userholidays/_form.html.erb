@@ -31,7 +31,14 @@
     <%= f.label :duration %><br>
     <%= f.text_field :duration %>
   </div>
-  <div class="actions">
+   <div class="field">
+    <%= f.label "Status", class: 'control-label' %>
+    <div class="controls">
+      <%= f.select(:status_type, options_for_select([['GRANTED', 'GRANTED'], ['DECLINED', 'DECLINED']])) %>
+    </div>
+  </div>
+
+ <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

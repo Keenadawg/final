@@ -9,14 +9,27 @@
 <body>
   
   <p>HR Holiday System</p>
+
   
-<%= link_to "home", root_path %>
+<<%= link_to "home", root_path %>
 <%= link_to "Contact", welcome_contact_path %>
 <%= link_to "Features", welcome_features_path %>
-<%= link_to "Login", welcome_login_path %>
 <%= link_to "userholidays", userholidays_path %>
 
+
+<% if current_user %>
+  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "sign up", new_user_registration_path %>
+  <%= link_to "sign in", new_user_session_path %>
+<% end%>
+  <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+
+
 <%= yield %>
+
+</div>
 
 </body>
 </html>
