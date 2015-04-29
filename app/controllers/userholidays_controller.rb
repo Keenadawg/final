@@ -4,7 +4,10 @@ class UserholidaysController < ApplicationController
   # GET /userholidays
   # GET /userholidays.json
   def index
- @userholidays = Userholiday.all
+    @userholidays = Userholiday.all
+    
+    #@search = UserholidaySearch.new(params[:search])
+    #@userholidays = @search.scope
   end
 
   # GET /userholidays/1

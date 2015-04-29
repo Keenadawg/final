@@ -18,9 +18,9 @@
     <% @holidays.each do |holiday| %>
       <tr>
         <td><%= holiday.username %></td>
-        <td><%= holiday.manager %></td>
         <td><%= holiday.startdate %></td>
         <td><%= holiday.enddate %></td>
+        <td><%= holiday.manager %></td>
         <td><%= holiday.duration %></td>
         <td><%= link_to 'Show', holiday %></td>
         <td><%= link_to 'Edit', edit_holiday_path(holiday) %></td>

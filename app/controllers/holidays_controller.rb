@@ -9,6 +9,7 @@ class HolidaysController < ApplicationController
 
   # GET /holidays/1
   # GET /holidays/1.json
+  
   def show
   end
 
@@ -75,6 +76,6 @@ class HolidaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def holiday_params
-      params.require(:holiday).permit(:username, :manager, :startdate, :enddate, :duration)
+      params.require(:holiday).permit(:username, :startdate, :enddate, :manager, :duration, :status)
     end
 end

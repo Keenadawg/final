@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  
   resources :holidays do
     collection { post :import }
   end
+  
   devise_for :users
+  
   get 'welcome/login'
 
   get 'welcome/home'
@@ -15,6 +18,6 @@ Rails.application.routes.draw do
 
   resources :userholidays
   
-  root to: 'welcome#index'
+  root to: 'welcome#home'
   
 end  

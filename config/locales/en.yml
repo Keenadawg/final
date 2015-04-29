@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+
+
+# Date formatting
+date:
+  formats:
+    default: "%m/%d/%Y"
+    short: "%m/%d"
+datetime:
+  formats:
+    default: "%m/%d/%Y %H:%M"
+    short: "%H:%M"
+    notime: "%m/%d/%Y"

@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Final</title>
+  <title>HR Holiday System</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   
-  <p>HR Holiday System</p>
+  <div class="wrapper">
+    <div class="header">
+      <%= link_to "HR Holiday System", root_path, class: "logo" %>
+    
+      <div class="navigation">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Contact", welcome_contact_path %>
+        <%= link_to "Holiday Requests", userholidays_path %>
+        <% if current_user %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Create account", new_user_registration_path %>
+          <%= link_to "Log in", new_user_session_path %>
+        <% end%>
+      </div>
+    </div>
 
-  
-<<%= link_to "home", root_path %>
-<%= link_to "Contact", welcome_contact_path %>
-<%= link_to "Features", welcome_features_path %>
-<%= link_to "userholidays", userholidays_path %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-
-<% if current_user %>
-  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "sign up", new_user_registration_path %>
-  <%= link_to "sign in", new_user_session_path %>
-<% end%>
-  <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-
-
-<%= yield %>
-
-</div>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

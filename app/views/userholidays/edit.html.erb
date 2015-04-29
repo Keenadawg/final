@@ -1,6 +1,47 @@
 <h1>Editing Userholiday</h1>
 
-<%= render 'form' %>
+<%= form_for(@userholiday) do |f| %>
+  <% if @userholiday.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@userholiday.errors.count, "error") %> prohibited this userholiday from being saved:</h2>
+
+      <ul>
+      <% @userholiday.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :managersName %><br>
+    <%= f.text_field :managersName %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.text_field :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br>
+    <%= f.text_field :end %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label "Status", class: 'control-label' %>
+    <%= f.select(:status_type, options_for_select([['Granted', 'granted'], ['Declined', 'declined']])) %>
+  </div>
+
+    <div class="actions">
+        <%= f.submit "Submit Request", class: "btn" %>
+    </div>
+<% end %>
 
 <%= link_to 'Show', @userholiday %> |
 <%= link_to 'Back', userholidays_path %>
